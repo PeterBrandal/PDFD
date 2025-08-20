@@ -2,12 +2,20 @@
     "manifest_version": 3,
     "name": "PDF Dictionary",
     "version": "1.0",
-    "description": "A Chrome extension that provides a dictionary for PDF files.",
+    "description": "A Chrome/Firefox extension that provides a dictionary for PDF files.",
     "permissions": [
-        "activeTab",
-        "scripting",
-        "storage"
+        "storage",
+        "clipboardRead"
     ],
+    "commands": {
+        "_execute_action": {
+            "suggested_key": {
+                "default": "Ctrl + Shift + L",
+                "mac": "Command + Shift + L"
+            },
+            "description": "Look up the highlighted word in the dictionary."
+        }
+    },
     "action": {
         "default_popup": "popup.html",
         "default_icon": {
@@ -15,8 +23,5 @@
             "48": "images/icon48.png",
             "128": "images/icon128.png"
         }
-    },
-    "background": {
-        "service_worker": "background.js"
-    } 
+    }
 }
